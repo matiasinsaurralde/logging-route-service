@@ -78,7 +78,7 @@ func logRequest(forwardedURL, sigHeader, body string, headers http.Header, skipS
 	log.Println("Received request: ")
 	log.Printf("%s: %s\n", CF_FORWARDED_URL_HEADER, forwardedURL)
 	log.Printf("%s: %s\n", CF_PROXY_SIGNATURE_HEADER, sigHeader)
-	log.Println("")
+	log.Printf("Host Header %s\n", headers.Get("Host"))
 	log.Printf("Headers: %#v\n", headers)
 	log.Println("")
 	log.Printf("Request Body: %s\n", body)
